@@ -2,14 +2,32 @@
 using namespace std;
 
 int main() {
-    int arr[] = {1, 2, 3, 4, 5};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int sum = 0;
+    int n;
+    double sum = 0.0;
 
-    for (int i = 0; i < n; i++)
-        sum += arr[i];
+    cout << "Enter the number of elements: ";
+    cin >> n;
 
-    double average = (double)sum / n;
-    cout << "Average of elements: " << average;
+    // Check for valid number of elements
+    if (n <= 0) {
+        cout << "Please enter a positive number." << endl;
+        return 1;
+    }
+
+    double number;
+
+    // Get n numbers from the user
+    for (int i = 1; i <= n; i++) {
+        cout << "Enter number " << i << ": ";
+        cin >> number;
+        sum += number; // Add the number to the sum
+    }
+
+    // Calculate the average
+    double average = sum / n;
+
+    cout << "The average is: " << average << endl;
+
     return 0;
 }
+
